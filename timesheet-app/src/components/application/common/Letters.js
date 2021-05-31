@@ -7,24 +7,19 @@ function Letters() {
 
     const [activeLetter, setActiveLetter] = useState("");
 
-
     const setActiveLetterClass = (id) => {
         let className = "";
-
         if (activeLetter === id) {
             className += "active";
         }
-
         if ('m' === id) {
             className = "disabled";
         }
-
         if ('z' === id) {
             if (className === "active")
                 className += " "
             className += "last";
         }
-
         return className;
     };
 
@@ -38,7 +33,7 @@ function Letters() {
                 {lettersList.map((value, index) => {
                     return (
                         <li key={index} className={setActiveLetterClass(value)}>
-                            <a onClick={() => handleActiveLetter(value)}>{value}</a>
+                            <button className={setActiveLetterClass(value) + " a-letters"} onClick={() => handleActiveLetter(value)}>{value}</button>
                         </li>
                     )
                 })}

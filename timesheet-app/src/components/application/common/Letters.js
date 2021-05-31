@@ -1,87 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Letters() {
+
+    const lettersList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+    const [activeLetter, setActiveLetter] = useState("");
+
+
+    const setActiveLetterClass = (id) => {
+        let className = "";
+
+        if (activeLetter === id) {
+            className += "active";
+        }
+
+        if ('m' === id) {
+            className = "disabled";
+        }
+
+        if ('z' === id) {
+            if (className === "active")
+                className += " "
+            className += "last";
+        }
+
+        return className;
+    };
+
+    const handleActiveLetter = (value) => {
+        setActiveLetter(value)
+    };
+
     return (
         <div className="alpha">
             <ul>
-                <li>
-                    <a href="javascript:;">a</a>
-                </li>
-                <li>
-                    <a href="javascript:;">b</a>
-                </li>
-                <li>
-                    <a href="javascript:;">c</a>
-                </li>
-                <li>
-                    <a href="javascript:;">d</a>
-                </li>
-                <li>
-                    <a href="javascript:;">e</a>
-                </li>
-                <li className="active">
-                    <a href="javascript:;">f</a>
-                </li>
-                <li>
-                    <a href="javascript:;">g</a>
-                </li>
-                <li>
-                    <a href="javascript:;">h</a>
-                </li>
-                <li>
-                    <a href="javascript:;">i</a>
-                </li>
-                <li>
-                    <a href="javascript:;">j</a>
-                </li>
-                <li>
-                    <a href="javascript:;">k</a>
-                </li>
-                <li>
-                    <a href="javascript:;">l</a>
-                </li>
-                <li className="disabled">
-                    <a href="javascript:;">m</a>
-                </li>
-                <li>
-                    <a href="javascript:;">n</a>
-                </li>
-                <li>
-                    <a href="javascript:;">o</a>
-                </li>
-                <li>
-                    <a href="javascript:;">p</a>
-                </li>
-                <li>
-                    <a href="javascript:;">q</a>
-                </li>
-                <li>
-                    <a href="javascript:;">r</a>
-                </li>
-                <li>
-                    <a href="javascript:;">s</a>
-                </li>
-                <li>
-                    <a href="javascript:;">t</a>
-                </li>
-                <li>
-                    <a href="javascript:;">u</a>
-                </li>
-                <li>
-                    <a href="javascript:;">v</a>
-                </li>
-                <li>
-                    <a href="javascript:;">w</a>
-                </li>
-                <li>
-                    <a href="javascript:;">x</a>
-                </li>
-                <li>
-                    <a href="javascript:;">y</a>
-                </li>
-                <li className="last">
-                    <a href="javascript:;">z</a>
-                </li>
+                {lettersList.map((value, index) => {
+                    return (
+                        <li key={index} className={setActiveLetterClass(value)}>
+                            <a onClick={() => handleActiveLetter(value)}>{value}</a>
+                        </li>
+                    )
+                })}
             </ul>
         </div>
     )

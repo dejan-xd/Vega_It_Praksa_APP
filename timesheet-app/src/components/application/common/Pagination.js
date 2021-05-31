@@ -1,21 +1,30 @@
 import React from 'react'
 
 function Pagination() {
+    const pagesList = ['1', '2', '3', 'Next'];
+
+    const setActivePageClass = (id) => {
+        let className = "";
+
+        if ('Next' === id) {
+            if (className === "active")
+                className += " "
+            className += "last";
+        }
+
+        return className;
+    };
+
     return (
         <div className="pagination">
             <ul>
-                <li>
-                    <a href="javascript:;">1</a>
-                </li>
-                <li>
-                    <a href="javascript:;">2</a>
-                </li>
-                <li>
-                    <a href="javascript:;">3</a>
-                </li>
-                <li className="last">
-                    <a href="javascript:;">Next</a>
-                </li>
+                {pagesList.map((value, index) => {
+                    return (
+                        <li key={index} className={setActivePageClass(value)}>
+                            <a>{value}</a>
+                        </li>
+                    )
+                })}
             </ul>
         </div>
     )

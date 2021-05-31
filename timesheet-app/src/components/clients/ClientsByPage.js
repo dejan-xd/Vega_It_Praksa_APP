@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Client from './Client'
-import axios from 'axios'
+import { getClients } from '../../services/ClientService'
 
 function ClientsByPage() {
 
     const [clients, setClients] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/Clients')
+        getClients()
             .then(res => {
                 setClients(res.data)
             })

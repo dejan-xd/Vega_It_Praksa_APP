@@ -11,10 +11,10 @@ function Footer() {
                 </ul>
                 <ul className="right">
                     <li>
-                        <a href="javascript:;">Terms of service</a>
+                        <a>Terms of service</a>
                     </li>
                     <li>
-                        <a href="javascript:;" className="last">Privacy policy</a>
+                        <a className="last">Privacy policy</a>
                     </li>
                 </ul>
             </div>

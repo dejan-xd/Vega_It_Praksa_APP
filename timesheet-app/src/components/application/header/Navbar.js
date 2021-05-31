@@ -5,10 +5,10 @@ function Navbar() {
         <nav>
             <ul className="menu">
                 <li>
-                    <a href="index.html" className="btn nav active">TimeSheet</a>
+                    <a href="index.html" className="btn nav">TimeSheet</a>
                 </li>
                 <li>
-                    <a href="clients.html" className="btn nav">Clients</a>
+                    <a href="clients.html" className="btn nav active">Clients</a>
                 </li>
                 <li>
                     <a href="projects.html" className="btn nav">Projects</a>

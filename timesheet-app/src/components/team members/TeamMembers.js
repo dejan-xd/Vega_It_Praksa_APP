@@ -1,26 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NewTeamMember from './NewTeamMember'
 import Letters from '../application/common/Letters'
 import TeamMemberByPage from './TeamMemberByPage'
 import Pagination from '../application/common/Pagination'
+import Create from '../application/common/Create'
+
 
 function TeamMembers() {
+
+    const [showModal, setShowModal] = useState(false);
+
+    const handleShowModal = () => {
+        setShowModal(true)
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
     return (
-        <section className="content">
-            <h2><i className="ico team-member"></i>Team members</h2>
-            <div className="grey-box-wrap reports ico-member">
-                <a href="#new-member" className="link new-member-popup test">
-                    <span>Create new member</span>
-                </a>
-                <div className="search-page">
-                    <input type="search" name="search-clients" className="in-search" />
-                </div>
-            </div>
-            <NewTeamMember />
-            <Letters />
-            <TeamMemberByPage />
-            <Pagination />
-        </section>
+        <React.Fragment>
+            <section className="content">
+                <Create entityName="member" entities="team members" showModal={handleShowModal} />
+                <Letters />
+                <TeamMemberByPage />
+                <Pagination />
+            </section>
+            <NewTeamMember showModal={showModal} closeModal={handleCloseModal} />
+        </React.Fragment>
     )
 }
 

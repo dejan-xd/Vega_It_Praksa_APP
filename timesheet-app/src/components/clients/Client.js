@@ -11,11 +11,7 @@ function Client({ client }) {
     const [showDetails, setShowDetails] = useState(false);
     const [isActive, setActive] = useState(false);
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit, formState: { errors }, } = useForm();
 
     const handleShowDetails = () => {
         setShowDetails(!showDetails);
@@ -46,7 +42,7 @@ function Client({ client }) {
     };
 
     // Delete client
-    const deleteClientHandle = (data) => {
+    const deleteClientHandle = () => {
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this client.",
@@ -99,13 +95,13 @@ function Client({ client }) {
                             <label>Client name:</label>
                             <input type="text" className="in-text" defaultValue={client.clientName}
                                 {...register("clientName", { required: true })} />
-                            {errors.clientName && <div>Client name is required!</div>}
+                            {errors.clientName && <div className="invalid-input">Client name is required!</div>}
                         </li>
                         <li>
                             <label>Zip/Postal code:</label>
                             <input type="text" className="in-text" defaultValue={client.zipCode}
                                 {...register("zipCode", { required: true })} />
-                            {errors.zipCode && <div>Client zip/postal code is required!</div>}
+                            {errors.zipCode && <div className="invalid-input">Client zip/postal code is required!</div>}
                         </li>
                     </ul>
                     <ul className="form">
@@ -113,12 +109,12 @@ function Client({ client }) {
                             <label>Address:</label>
                             <input type="text" className="in-text" defaultValue={client.address}
                                 {...register("address", { required: true })} />
-                            {errors.address && <div>Client address is required!</div>}
+                            {errors.address && <div className="invalid-input">Client address is required!</div>}
                         </li>
                         <li>
                             <label>Country:</label>
-                            <select defaultValue={'DEFAULT'} {...register("countryId", { required: true })} >
-                                <option value="DEFAULT" disabled>{client.clientCountry.countryName}</option>
+                            <select defaultValue={client.clientCountry.countryId} {...register("countryId", { required: true })} >
+                                <option value={client.clientCountry.countryId} disabled>{client.clientCountry.countryName}</option>
                                 {
                                     countries.map(country =>
                                         <option key={country.countryId} value={country.countryId}>{country.countryName}</option>
@@ -132,7 +128,7 @@ function Client({ client }) {
                             <label>City:</label>
                             <input type="text" className="in-text" defaultValue={client.city}
                                 {...register("city", { required: true })} />
-                            {errors.city && <div>Client city is required!</div>}
+                            {errors.city && <div className="invalid-input">Client city is required!</div>}
                         </li>
                     </ul>
                     <div className="buttons">

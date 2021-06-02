@@ -7,13 +7,18 @@ function Create({ entityName, entities, showModal }) {
     const searchName = "search-" + entities;
     const entitiesName = entities.charAt(0).toUpperCase() + entities.slice(1);
 
+    let test = "";
+
+    if (entities === "team members")
+        test = " ico-member";
+
     return (
         <React.Fragment>
             <h2>
                 <i className={className}></i>{entitiesName}
             </h2>
 
-            <div className="grey-box-wrap reports">
+            <div className={"grey-box-wrap reports" + test}>
                 <button onClick={showModal} className="link new-member-popup a-create-new">
                     Create new {entityName}
                 </button>

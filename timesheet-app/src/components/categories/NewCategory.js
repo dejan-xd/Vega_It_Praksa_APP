@@ -50,14 +50,14 @@ function NewCategory({ showModal, closeModal }) {
                                         <li>
                                             <label>Category name:</label>
                                             <input {...register("categoryName", { required: true })} type="text" className="in-text" />
-                                            {errors.categoryName && <div>Category name is required!</div>}
+                                            {errors.categoryName && <div className="invalid-input">Category name is required!</div>}
                                         </li>
                                     </ul>
                                     <div className="buttons">
                                         <div className="inner">
                                             <button className="btn green btn-save" onClick={handleSubmit(createCategoryHandle)}>
                                                 Save
-                                                </button>
+                                            </button>
                                         </div>
                                     </div>
                                 </form>

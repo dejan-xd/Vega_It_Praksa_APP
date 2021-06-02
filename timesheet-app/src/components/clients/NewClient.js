@@ -63,32 +63,33 @@ function NewClient({ showModal, closeModal }) {
                                         <li>
                                             <label>Client name:</label>
                                             <input {...register("clientName", { required: true })} type="text" className="in-text" />
-                                            {errors.clientName && <div>Client name is required!</div>}
+                                            {errors.clientName && <div className="invalid-input">Client name is required!</div>}
                                         </li>
                                         <li>
                                             <label>Address:</label>
                                             <input {...register("address", { required: true })} type="text" className="in-text" />
-                                            {errors.address && <div>Client address is required!</div>}
+                                            {errors.address && <div className="invalid-input">Client address is required!</div>}
                                         </li>
                                         <li>
                                             <label>City:</label>
                                             <input {...register("city", { required: true })} type="text" className="in-text" />
-                                            {errors.city && <div>Client city is required!</div>}
+                                            {errors.city && <div className="invalid-input">Client city is required!</div>}
                                         </li>
                                         <li>
                                             <label>Zip/Postal code:</label>
                                             <input {...register("zipCode", { required: true })} type="text" className="in-text" min="1" />
-                                            {errors.zipCode && <div>Client zip/postal code is required!</div>}
+                                            {errors.zipCode && <div className="invalid-input">Client zip/postal code is required!</div>}
                                         </li>
                                         <li>
                                             <label>Country:</label>
-                                            <select defaultValue={'DEFAULT'} {...register("countryId", { required: true })} >
-                                                <option value="DEFAULT" disabled>Select country</option>
+                                            <select defaultValue="" {...register("countryId", { required: true })} >
+                                                <option value="" disabled>Select country</option>
                                                 {
                                                     countries.map(country =>
                                                         <option key={country.countryId} value={country.countryId}>{country.countryName}</option>
                                                     )}
                                             </select>
+                                            {errors.countryId && <div className="invalid-input">Client country is required!</div>}
                                         </li>
                                     </ul>
                                     <div className="buttons">

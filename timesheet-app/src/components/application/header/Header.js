@@ -7,7 +7,7 @@ function Header() {
         <header className="header">
             <div className="top-bar"></div>
             <div className="wrapper">
-                <a href="index.html" className="logo">
+                <a href="timesheets" className="logo">
                     <img src="assets/img/logo.png" alt="VegaITSourcing Timesheet" />
                 </a>
                 <TeamMemberMenu />

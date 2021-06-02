@@ -21,7 +21,7 @@ function Pagination() {
                 {pagesList.map((value, index) => {
                     return (
                         <li key={index} className={setActivePageClass(value)}>
-                            <a>{value}</a>
+                            <button className="pagination">{value}</button>
                         </li>
                     )
                 })}

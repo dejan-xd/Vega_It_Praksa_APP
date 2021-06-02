@@ -11,10 +11,10 @@ function Footer() {
                 </ul>
                 <ul className="right">
                     <li>
-                        <a>Terms of service</a>
+                        <button className="a-footer">Terms of service</button>
                     </li>
                     <li>
-                        <a className="last">Privacy policy</a>
+                        <button className="a-footer-last">Privacy policy</button>
                     </li>
                 </ul>
             </div>

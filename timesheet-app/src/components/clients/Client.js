@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { putClient, deleteClient } from '../../services/ClientService'
 import swal from 'sweetalert';
+import { getCountries } from '../../services/CountryService'
 import '../../mycss/mycss.css'
 
 
@@ -73,6 +74,18 @@ function Client({ client }) {
             })
     };
 
+    const [countries, setCountries] = useState([])
+
+    useEffect(() => {
+        getCountries()
+            .then(res => {
+                setCountries(res.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [])
+
     return (
         <div className={isActive ? "item open" : "item"}>
             <div className="heading" onClick={handleShowDetails} >
@@ -104,15 +117,15 @@ function Client({ client }) {
                         </li>
                         <li>
                             <label>Country:</label>
-                            <select {...register("Country", { required: true })} >
-                                <option>Serbia</option>
-                                <option>Germany</option>
-                                <option>Great Britain</option>
-                                <option>France</option>
-                                <option>Marocco</option>
-                                <option>Russia</option>
+                            <select defaultValue={'DEFAULT'} {...register("countryId", { required: true })} >
+                                <option value="DEFAULT" disabled>{client.clientCountry.countryName}</option>
+                                {
+                                    countries.map(country =>
+                                        <option key={country.countryId} value={country.countryId}>{country.countryName}</option>
+                                    )}
                             </select>
                         </li>
+
                     </ul>
                     <ul className="form last">
                         <li>

@@ -14,9 +14,9 @@ function Create({ entityName, entities, showModal }) {
             </h2>
 
             <div className="grey-box-wrap reports">
-                <a onClick={showModal} className="link new-member-popup">
+                <button onClick={showModal} className="link new-member-popup a-create-new">
                     Create new {entityName}
-                </a>
+                </button>
                 <div className="search-page">
                     <input type="search" name={searchName} className="in-search" />
                 </div>

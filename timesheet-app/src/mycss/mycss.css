@@ -23,6 +23,16 @@
     position: relative !important;
 }
 
+.fancybox-close-image{
+    width: 30px !important;
+    height: 30px !important;
+    color: #9e9e9e !important;
+    font-size: 12px !important;
+    font-family: Tahoma, Arial, sans-serif !important;
+    padding: unset !important;
+    border: none !important;
+}
+
 .btn-save {
     width: 70px !important;
     height: 28px !important;
@@ -40,5 +50,81 @@
 }
 
 .ml-3 {
-    margin-left: 3px;
+    margin-left: 3px !important;
+}
+
+.a-create-new {
+    width: 150px !important;
+    height: 14px !important;
+    font-size: 12px !important;
+    font-family: Tahoma, Arial, sans-serif !important;
+    background: none !important;
+    padding: unset !important;
+    border: none !important;
+}
+
+.a-letters {
+    background: #eee !important;
+    border: 1px solid #bdbdbd !important;
+    display: block !important;
+    width: 24px !important;
+    height: 24px !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    font-family: Tahoma, Arial, sans-serif !important;
+    line-height: 24px !important;
+    font-weight: bold !important;
+    color: #f67d34 !important;
+    padding: unset !important;
+    text-transform: uppercase !important;
+}
+
+.active, .a-letters:hover{
+    background: #f67d34 !important;
+    border-color: #f67d34 !important;
+    color: #eee !important;
+}
+
+.disabled, .disabled:hover {
+    color: silver !important;
+    background: #ececec !important;
+    border-color: #ececec !important;
+    cursor: default !important;
+}
+
+.pagination {
+    padding: 0 10px !important;
+    font-family: Tahoma, Arial, sans-serif !important;
+    display: block !important;
+    color: #f67d34 !important;
+    background: none !important;
+    padding: unset !important;
+    border: none !important;
+    margin-right: 10px !important;
+}
+
+.pagination:hover, .a-footer:hover, .a-footer-last:hover {
+    text-decoration:underline !important;
+}
+
+.a-footer {
+    width:81px !important;
+    height: 13px !important;
+    color:#FFFFFF !important;
+    font-size: 11px !important;
+    font-family: Tahoma, Arial, sans-serif !important;
+    background: none !important;
+    padding: unset !important;
+    border: none !important;
+}
+
+.a-footer-last {
+    width:66px !important;
+    height: 13px !important;
+    color:#FFFFFF !important;
+    font-size: 11px !important;
+    font-family: Tahoma, Arial, sans-serif !important;
+    background: none !important;
+    padding: unset !important;
+    border: none !important;
 }

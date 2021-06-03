@@ -33,17 +33,9 @@
     border: none !important;
 }
 
-.btn-save {
-    width: 70px !important;
-    height: 28px !important;
-    color: #FFFFFF !important;
-    font-size: 13px !important;
-    font-family: Tahoma, Arial, sans-serif !important;
-}
-
-.btn-delete {
-    width: 79px !important;
-    height: 28px !important;
+.btn-save, .btn-delete, .btn-reset {
+    width: auto !important;
+    height: auto !important;
     color: #FFFFFF !important;
     font-size: 13px !important;
     font-family: Tahoma, Arial, sans-serif !important;
@@ -51,6 +43,10 @@
 
 .ml-3 {
     margin-left: 3px !important;
+}
+
+.invalid-input {
+    color: red;
 }
 
 .a-create-new {
@@ -61,6 +57,7 @@
     background: none !important;
     padding: unset !important;
     border: none !important;
+    text-align: left !important;
 }
 
 .a-letters {
@@ -83,6 +80,12 @@
     background: #f67d34 !important;
     border-color: #f67d34 !important;
     color: #eee !important;
+}
+
+.nav-active {
+    color: #f1592a !important;
+    background: #fff !important;
+    border-color: #ababab !important;
 }
 
 .disabled, .disabled:hover {
@@ -127,4 +130,9 @@
     background: none !important;
     padding: unset !important;
     border: none !important;
+}
+
+.email-input{
+    width: 450px !important;
+    height: 28px !important;
 }

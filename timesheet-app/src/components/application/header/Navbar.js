@@ -1,29 +1,63 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link, useLocation } from "react-router-dom";
+
 
 function Navbar() {
+
+    const location = useLocation();
+
+    let [activeLink, setActiveLink] = useState(location.pathname)
+
+    const activateLink = (linkName) => {
+        setActiveLink(linkName)
+    }
+
+    const buttonClass = (name) => {
+        if (activeLink === "/")
+            activeLink = "/timesheets"
+        if (activeLink === name) {
+            return "btn nav active nav-active"
+        } else {
+            return "btn nav"
+        }
+    }
+
     return (
         <nav>
             <ul className="menu">
                 <li>
-                    <a href="index.html" className="btn nav">TimeSheet</a>
+                    <Link to="/timesheets" onClick={() => activateLink("/timesheets")} className={buttonClass("/timesheets")}>
+                        TimeSheet
+                    </Link>
                 </li>
                 <li>
-                    <a href="clients.html" className="btn nav active">Clients</a>
+                    <Link to="/clients" onClick={() => activateLink("/clients")} className={buttonClass("/clients")}>
+                        Clients
+                    </Link>
                 </li>
                 <li>
-                    <a href="projects.html" className="btn nav">Projects</a>
+                    <Link to="/projects" onClick={() => activateLink("/projects")} className={buttonClass("/projects")}>
+                        Projects
+                    </Link>
                 </li>
                 <li>
-                    <a href="categories.html" className="btn nav">Categories</a>
+                    <Link to="/categories" onClick={() => activateLink("/categories")} className={buttonClass("/categories")}>
+                        Categories
+                    </Link>
                 </li>
                 <li>
-                    <a href="team-members.html" className="btn nav">Team members</a>
+                    <Link to="/team-members" onClick={() => activateLink("/team-members")} className={buttonClass("/team-members")}>
+                        Team members
+                    </Link>
                 </li>
                 <li className="last">
-                    <a href="reports.html" className="btn nav">Reports</a>
+                    <Link to="/reports" onClick={() => activateLink("/reports")} className={buttonClass("/reports")}>
+                        Reports
+                    </Link>
                 </li>
             </ul>
             <span className="line"></span>
+
         </nav>
     )
 }

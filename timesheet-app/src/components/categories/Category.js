@@ -82,7 +82,7 @@ function Category({ category }) {
                             <label>Category name:</label>
                             <input type="text" className="in-text" defaultValue={category.categoryName}
                                 {...register("categoryName", { required: true })} />
-                            {errors.categoryName && <div>Category name is required!</div>}
+                            {errors.categoryName && <div className="invalid-input">Category name is required!</div>}
                         </li>
                     </ul>
                     <div className="buttons">

@@ -88,13 +88,11 @@ function NewTeamMember({ showModal, closeModal }) {
                                         <span className="radio">
                                             <label htmlFor="inactive">Inactive:</label>
                                             <input className="ml-3" type="radio" value="1" name="status"
-                                                aria-invalid={errors.teamMemberStatus ? "true" : "false"}
                                                 {...register("teamMemberStatus", { required: true })} />
                                         </span>
                                         <span className="radio">
                                             <label htmlFor="active">Active:</label>
                                             <input className="ml-3" type="radio" value="0" name="status"
-                                                aria-invalid={errors.teamMemberStatus ? "true" : "false"}
                                                 {...register("teamMemberStatus", { required: true })} />
                                         </span>
                                         {errors.teamMemberStatus && <div className="invalid-input">Member status is required!</div>}
@@ -109,6 +107,7 @@ function NewTeamMember({ showModal, closeModal }) {
                                                     <option key={role.roleId} value={role.roleId}>{role.roleName}</option>
                                                 )}
                                         </select>
+                                        {errors.roleId && <div className="invalid-input">Member role is required!</div>}
                                     </li>
                                 </ul>
                                 <div className="buttons">
@@ -124,7 +123,7 @@ function NewTeamMember({ showModal, closeModal }) {
                     <button className="fancybox-close-image" id="fancybox-close" style={{ display: "inline" }} onClick={closeModal}> </button>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

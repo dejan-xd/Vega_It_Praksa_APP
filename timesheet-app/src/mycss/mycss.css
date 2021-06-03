@@ -136,3 +136,22 @@
     width: 450px !important;
     height: 28px !important;
 }
+
+.inline-fix {
+    float: right !important;
+}
+
+.first-radio-fix {
+    margin-left: 60px !important;
+    margin-top: -20px !important;
+    width: 70px !important;
+}
+
+.radio-fix {
+    margin-left: 60px !important;
+    width: 70px !important;
+}
+
+.float-right {
+    float: right !important;
+}

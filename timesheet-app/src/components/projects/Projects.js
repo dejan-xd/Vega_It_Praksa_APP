@@ -1,22 +1,33 @@
-import React from 'react'
-import Letters from '../application/common/Letters'
+import React, { useState } from 'react'
 import NewProject from './NewProject'
+import Letters from '../application/common/Letters'
 import ProjectsByPage from './ProjectsByPage'
+import Pagination from '../application/common/Pagination'
+import Create from '../application/common/Create'
+
 
 function Projects() {
+
+    const [showModal, setShowModal] = useState(false);
+
+    const handleShowModal = () => {
+        setShowModal(true)
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
     return (
-        <section className="content">
-            <h2><i className="ico projects"></i>Projects</h2>
-            <div className="grey-box-wrap reports">
-                <a href="#new-member" className="link new-member-popup">Create new project</a>
-                <div className="search-page">
-                    <input type="search" name="search-clients" className="in-search" />
-                </div>
-            </div>
-            <NewProject />
-            <Letters />
-            <ProjectsByPage />
-        </section>
+        <React.Fragment>
+            <section className="content">
+                <Create entityName="project" entities="projects" showModal={handleShowModal} />
+                <Letters />
+                <ProjectsByPage />
+                <Pagination />
+            </section>
+            <NewProject showModal={showModal} closeModal={handleCloseModal} />
+        </React.Fragment>
     )
 }
 

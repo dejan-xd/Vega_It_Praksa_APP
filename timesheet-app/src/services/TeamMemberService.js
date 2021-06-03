@@ -17,3 +17,7 @@ export function putTeamMember(id, requestBody) {
 export function deleteTeamMember(id) {
     return deleteAxiosAPI(`${TEAMMEMBERURL}?id=${id}`);
 }
+
+export function getTeamMembersByRole(role) {
+    return getAxiosAPI(`${TEAMMEMBERURL}/${role}/role`);
+}

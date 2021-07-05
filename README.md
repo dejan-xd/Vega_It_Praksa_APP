@@ -2,5 +2,5 @@
 
 npm install  
 npm install moment  
-npm start
+npm start  
 http://localhost:3000/timesheets
